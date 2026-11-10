@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Function details &mdash; spm_2_bids v0.3.0
+ documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=19ed39ba"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/mat_urls.js?v=fdbe6872"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mapping" href="mapping.html" />
+    <link rel="prev" title="spm_2_bids" href="general_information.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            spm_2_bids
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Content</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general_information.html">spm_2_bids</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Function details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mat-Mapping.m"><code class="docutils literal notranslate"><span class="pre">Mapping</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Mapping</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">spm_2_bids</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Function details</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/function_details.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="function-details">
+<h1>Function details<a class="headerlink" href="#function-details" title="Link to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">spm_2_bids</span></code> only provides names to use but does not actually rename the files.</p>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="mat-spm_2_bids.m">
+<span class="sig-name descname"><span class="pre">spm_2_bids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="mat/name/spm_2_bids.html" title="Link to this definition"></a></dt>
+<dd><p>Provides a bids derivatives name for a file preprocessed with SPM</p>
+<p>USAGE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">new_filename</span><span class="p">,</span> <span class="n">pth</span><span class="p">,</span> <span class="n">json</span><span class="p">]</span> <span class="o">=</span> <span class="n">spm_2_bids</span><span class="p">(</span><span class="n">file</span> <span class="p">[,</span> <span class="nb">map</span><span class="p">][,</span> <span class="n">verbose</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – SPM preprocessed filename (can be fullpath);
+for example <code class="docutils literal notranslate"><span class="pre">wmsub-01_ses-01_T1w.nii</span></code></p></li>
+<li><p><strong>map</strong> – optional spm_2_bids map to overwrite the default
+map (see Mapping)</p></li>
+<li><p><strong>map</strong> – Mapping object</p></li>
+<li><p><strong>verbose</strong></p></li>
+<li><p><strong>verbose</strong> – boolean</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="field-list simple">
+<dt class="field-odd">new_filename<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(string) BIDS compatible filename
+for example <code class="docutils literal notranslate"><span class="pre">sub-01_ses-01_space-IXI549Space_desc-preproc_T1w.nii</span></code>;</p>
+</dd>
+</dl>
+</li>
+<li><dl class="field-list simple">
+<dt class="field-odd">pth<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(string) relative BIDS path
+for example <code class="docutils literal notranslate"><span class="pre">sub-01/ses-01</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="field-list simple">
+<dt class="field-odd">json<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(structure) JSON derivatives content</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p>The behaviour of which prefix gives which BIDS derivatives can be modified by
+adapting the <code class="docutils literal notranslate"><span class="pre">cfg</span></code>.</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="mat-defaults/check_cfg.m">
+<span class="sig-name descname"><span class="pre">check_cfg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cfg</span></em><span class="sig-paren">)</span><a class="headerlink" href="mat/name/check_cfg.html" title="Link to this definition"></a></dt>
+<dd><p>Check the option inputs and add any missing field with some defaults</p>
+<p>USAGE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cfg</span> <span class="o">=</span> <span class="n">check_cfg</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cfg</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">structure</span></code></span>) – structure or json filename containing the spm_2_bids.anat.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+<ul class="simple">
+<li><dl class="field-list simple">
+<dt class="field-odd">cfg<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the option structure with missing values filled in by the defaults.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">cfg</span></code> fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">all_entity_order</span></code>: order of all the official bids entities</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">entity_order</span></code>: order of the entities in bids derivatives</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fwhm</span></code>: value to append to smoothing description label</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spec</span></code>: specification details to over ride some of the defaults</p></li>
+</ul>
+<p>BIDS derivatives defining fields:</p>
+<p>Each of those fields contain a structure that lists the BIDS suffix
+and entities-label pairs for each type of preprocessed image.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">segment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">realign_unwarp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">real_param</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mean</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">normalized_mean</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">preproc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">preproc_norm</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smooth</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smooth_norm</span></code></p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% for grey matter segmentation output</span>
+<span class="n">cfg</span><span class="p">.</span><span class="n">segment</span><span class="p">.</span><span class="n">gm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">struct</span><span class="p">(</span><span class="s">'entities'</span><span class="p">,</span><span class="w"> </span><span class="nb">struct</span><span class="p">(</span><span class="s">'space'</span><span class="p">,</span><span class="w"> </span><span class="s">'individual'</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">                                           </span><span class="s">'label'</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="k">...</span>
+<span class="w">                        </span><span class="s">'suffix'</span><span class="p">,</span><span class="w"> </span><span class="s">'probseg'</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat class">
+<dt class="sig sig-object mat" id="mat-Mapping.m">
+<span class="property"><span class="pre">class</span> </span><span class="sig-name descname"><span class="pre">Mapping</span></span><a class="headerlink" href="mat/name/Mapping.html" title="Link to this definition"></a></dt>
+<dd><p>Creates a mapping object that will contain the list how an spm file will be renamed
+into a bids derivatives.</p>
+<p>Has the following attributes:</p>
+<blockquote>
+<div><ul>
+<li><p>mapping, (n X 1) structure with the following fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">prefix</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">suffix</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">entities</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ext</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_spec</span></code>: structure that must resemble the output of bids.File</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>cfg describes the common properties to be used for several names in the output.
+(See <code class="docutils literal notranslate"><span class="pre">check_cfg()</span></code>)</p></li>
+<li><p>list of SPM prefixes from <code class="docutils literal notranslate"><span class="pre">get_spm_prefix_list()</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stc</span> <span class="pre">=</span> <span class="pre">''</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">realign</span> <span class="pre">=</span> <span class="pre">''</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unwarp</span> <span class="pre">=</span> <span class="pre">''</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coreg</span> <span class="pre">=</span> <span class="pre">''</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bias_cor</span> <span class="pre">=</span> <span class="pre">''</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">norm</span> <span class="pre">=</span> <span class="pre">''</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smooth</span> <span class="pre">=</span> <span class="pre">''</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<div class="members docutils container">
+<dl>
+<dt>Constructor Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mat-Mapping.m.Mapping">
+<span class="sig-name descname"><span class="pre">Mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cfg</span></em><span class="sig-paren">)</span><a class="headerlink" href="mat/name/Mapping.Mapping.html" title="Link to this definition"></a></dt>
+<dd><p>Creates the mapping object with a given configuration</p>
+<p>USAGE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd>
+<dt>Method Summary</dt><dd><dl class="mat method">
+<dt class="sig sig-object mat" id="mat-Mapping.m.add_mapping">
+<span class="sig-name descname"><span class="pre">add_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="mat/name/Mapping.add_mapping.html" title="Link to this definition"></a></dt>
+<dd><p>Add a mapping to the for a given files or set of spm files to a
+specific name output.</p>
+<p>USAGE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span> <span class="o">=</span> <span class="n">add_mapping</span><span class="p">(</span><span class="s1">'prefix'</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="o">...</span>
+                     <span class="s1">'suffix'</span><span class="p">,</span> <span class="n">suffix</span><span class="p">,</span> <span class="o">...</span>
+                     <span class="s1">'entities'</span><span class="p">,</span> <span class="n">entities</span><span class="p">,</span> <span class="o">...</span>
+                     <span class="s1">'ext'</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="o">...</span>
+                     <span class="s1">'name_spec'</span><span class="p">,</span> <span class="n">struct</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mat-Mapping.m.flatten_mapping">
+<span class="sig-name descname"><span class="pre">flatten_mapping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="mat/name/Mapping.flatten_mapping.html" title="Link to this definition"></a></dt>
+<dd><p>ensures that there is only one prefix, suffix, entity for each mapping</p>
+<p>typically to be run before using <code class="docutils literal notranslate"><span class="pre">spm_2_bids</span></code></p>
+<ol class="upperalpha simple" start="3">
+<li><p>Copyright 2021 spm_2_bids developers</p></li>
+</ol>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mat-Mapping.m.print_mapping">
+<span class="sig-name descname"><span class="pre">print_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="mat/name/Mapping.print_mapping.html" title="Link to this definition"></a></dt>
+<dd><p>Print to screen by default.
+Otherwise can print to a file (markdown) or a json</p>
+<p>USAGE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span> <span class="o">=</span> <span class="n">print_mapping</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mat-Mapping.m.default">
+<span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="mat/name/Mapping.default.html" title="Link to this definition"></a></dt>
+<dd><p>Load into the the mapping objects the default map for SPM –&gt; bids derivatives</p>
+<p>USAGE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span> <span class="o">=</span> <span class="nb">map</span><span class="o">.</span><span class="n">default</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="mat-Mapping.m.find_mapping">
+<span class="sig-name descname"><span class="pre">find_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">varargin</span></em><span class="sig-paren">)</span><a class="headerlink" href="mat/name/Mapping.find_mapping.html" title="Link to this definition"></a></dt>
+<dd><p>USAGE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">find_mapping</span><span class="p">(</span><span class="s1">'prefix'</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="general_information.html" class="btn btn-neutral float-left" title="spm_2_bids" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mapping.html" class="btn btn-neutral float-right" title="Mapping" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
